@@ -1,4 +1,4 @@
-import {noRetry} from "../support/e2e";
+import {noRetry} from "../../support/e2e";
 
 describe('homepage', () => {
     beforeEach(() => {
