@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('view_item', () => {
+    cy.visit('/community-list');
+    cy.contains('Language Resources').click();
+    cy.contains('LINDAT / CLARIAH-CZ').click();
+    cy.contains('LINDAT / CLARIAH-CZ Data & Tools').click();
+    cy.contains('CorefUD 1.1').click();
+})
