@@ -7,4 +7,13 @@ describe('ufal-point-dev', () => {
     cy.contains('Lorem ipsum dolor sit amet', noRetry).should('not.exist');
   });
 
+  it('browse by should not contain untranslated strings', function() {
+    cy.visit('/community-list');
+    cy.contains('Language Resources').click();
+    cy.contains('LINDAT / CLARIAH-CZ').click();
+    cy.get('[aria-label="Browse Community or Collection"]').then(($el) => {
+      cy.contains('browse.comcol.by', noRetry).should('not.exist');
+    });
+  });
+
 })
